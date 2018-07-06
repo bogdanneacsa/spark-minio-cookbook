@@ -26,7 +26,7 @@ def get_configured_context():
     conf = SparkConf().setAppName("parquet_testing")
     sc = SparkContext(conf=conf)
     # Update to use the minio instance
-    sc._jsc.hadoopConfiguration().set('fs.s3a.endpoint', 'http://127.0.0.1:9000')
+    sc._jsc.hadoopConfiguration().set('fs.s3a.endpoint', 'http://172.17.0.2:9000')
     sc._jsc.hadoopConfiguration().set('fs.s3a.access.key', 'QDLKDBDPFW9W2I1A70JA')
     sc._jsc.hadoopConfiguration().set('fs.s3a.secret.key', 'x/doxcI1HByF/S4M1gF5y4e2NFt3XFkZ9SISqen7')
     sc._jsc.hadoopConfiguration().set('fs.s3a.path.style.access', 'true')
@@ -84,6 +84,6 @@ def query_own_parquet():
     df.select('browserFamily').distinct().show()
 
 
-# read_existing_parquet()
+read_existing_parquet()
 # csv_to_parquet()
-query_own_parquet()
+# query_own_parquet()
