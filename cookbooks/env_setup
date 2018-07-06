@@ -1,0 +1,8 @@
+Steps 1 -> 3 from here: https://github.com/minio/cookbook/blob/master/docs/apache-spark-with-minio.md
+
+
+https://github.com/apache/hadoop/blob/trunk/hadoop-tools/hadoop-aws/src/site/markdown/tools/hadoop-aws/troubleshooting_s3a.md
+Also make sure to copy the jars in hadoop shared lib
+
+cp spark-2.3.0-bin-without-hadoop/bin/*jar hadoop-2.8.3/share/hadoop/common/lib
+
